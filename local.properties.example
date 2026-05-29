@@ -1,0 +1,6 @@
+# Copy this file to local.properties and update both values for your computer.
+# Android Studio usually writes sdk.dir automatically.
+sdk.dir=C\:\\Users\\YOUR_WINDOWS_USERNAME\\AppData\\Local\\Android\\Sdk
+
+# Create a key at https://console.groq.com/keys
+GROQ_API_KEY=PASTE_YOUR_GROQ_API_KEY_HERE

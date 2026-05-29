@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 🔥 MULTI-STOP GRADIENT -->
+    <gradient
+        android:startColor="#2563EB"
+        android:centerColor="#4F46E5"
+        android:endColor="#7C3AED"
+        android:angle="135"/>
+
+    <!-- 🔹 ROUNDED -->
+    <corners android:radius="24dp"/>
+
+</shape>

@@ -1,0 +1,9 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- stronger fill -->
+    <solid android:color="#1E3A8A"/>
+
+    <!-- perfect circle -->
+    <corners android:radius="50dp"/>
+
+</shape>

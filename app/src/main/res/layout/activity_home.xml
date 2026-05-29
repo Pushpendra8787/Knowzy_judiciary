@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_dark_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnMenu"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_glass_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="="
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KnowzyDemo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Decision Intelligence Engine"
+                    android:textColor="#94A3B8"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnInfo"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_glass_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="i"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/bg_glass_card"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@mipmap/ic_knowzy_logo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_hero_gradient"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Analyze Situation"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Get structured, safe decisions instantly"
+                android:textColor="#E3F2FD"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#7456B6"
+                android:text="Start Analysis"
+                android:textAllCaps="false"
+                android:textColor="#16213E"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/bg_emergency_gradient"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Mode"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Immediate guidance for critical situations"
+                android:textColor="#FFE4E6"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#7456B6"
+                android:text="Activate Emergency"
+                android:textAllCaps="false"
+                android:textColor="#B91C1C"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/HomeSectionTitle"
+            android:text="Choose Input Method" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/btnVoice"
+                style="@style/HomeChoiceCard"
+                android:layout_marginEnd="8dp">
+
+                <TextView style="@style/HomeCircleIcon" android:text="V" />
+                <TextView style="@style/HomeCardTitle" android:text="Voice Input" />
+                <TextView
+                    style="@style/HomeCardDescription"
+                    android:text="Speak your situation naturally" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnText"
+                style="@style/HomeChoiceCard"
+                android:layout_marginStart="8dp">
+
+                <TextView style="@style/HomeCircleIcon" android:text="T" />
+                <TextView style="@style/HomeCardTitle" android:text="Text Input" />
+                <TextView
+                    style="@style/HomeCardDescription"
+                    android:text="Upload a PDF for precise analysis" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView style="@style/HomeSectionTitle" android:text="Recent Cases" />
+
+        <LinearLayout style="@style/HomeWideCard">
+            <TextView style="@style/HomeCardTitle" android:text="Test_Criminal_Case_Report.pdf" />
+            <TextView style="@style/HomeCardDescription" android:text="Analyzed" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/HomeWideCard">
+            <TextView style="@style/HomeCardTitle" android:text="MedicalCertificate.pdf" />
+            <TextView style="@style/HomeCardDescription" android:text="Analyzed" />
+        </LinearLayout>
+
+        <include layout="@layout/home_actions" />
+
+        <TextView
+            style="@style/HomeSectionTitle"
+            android:layout_marginTop="20dp"
+            android:text="System Status" />
+
+        <LinearLayout
+            style="@style/HomeWideCard"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="System Active                                      Live"
+                android:textColor="#4CAF50"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Confidence Level                                      82%"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="10dp"
+                android:max="100"
+                android:progress="82"
+                android:progressDrawable="@drawable/bg_progress_custom" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

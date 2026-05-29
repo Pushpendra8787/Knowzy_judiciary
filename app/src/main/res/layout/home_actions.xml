@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/HomeSectionTitle"
+        android:text="Quick Actions" />
+
+    <LinearLayout
+        android:id="@+id/btnKnowRights"
+        style="@style/HomeActionCardRow">
+
+        <TextView style="@style/HomeActionIcon" android:text="&#128220;" />
+        <LinearLayout style="@style/HomeActionText">
+            <TextView style="@style/HomeActionTitle" android:text="Know Your Rights" />
+            <TextView style="@style/HomeActionDescription" android:text="Understand your legal rights" />
+        </LinearLayout>
+        <TextView style="@style/HomeActionArrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLegalHelp"
+        style="@style/HomeActionCardRow">
+
+        <TextView style="@style/HomeActionIcon" android:text="&#9878;" />
+        <LinearLayout style="@style/HomeActionText">
+            <TextView style="@style/HomeActionTitle" android:text="Legal Help" />
+            <TextView style="@style/HomeActionDescription" android:text="Connect with legal experts" />
+        </LinearLayout>
+        <TextView style="@style/HomeActionArrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnHelpline"
+        style="@style/HomeActionCardRow">
+
+        <TextView style="@style/HomeActionIcon" android:text="&#9742;" />
+        <LinearLayout style="@style/HomeActionText">
+            <TextView style="@style/HomeActionTitle" android:text="Helpline" />
+            <TextView style="@style/HomeActionDescription" android:text="Access emergency contacts" />
+        </LinearLayout>
+        <TextView style="@style/HomeActionArrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnNearby"
+        style="@style/HomeActionCardRow">
+
+        <TextView style="@style/HomeActionIcon" android:text="&#128205;" />
+        <LinearLayout style="@style/HomeActionText">
+            <TextView style="@style/HomeActionTitle" android:text="Nearby Help" />
+            <TextView style="@style/HomeActionDescription" android:text="Find nearby police or support" />
+        </LinearLayout>
+        <TextView style="@style/HomeActionArrow" />
+    </LinearLayout>
+</LinearLayout>

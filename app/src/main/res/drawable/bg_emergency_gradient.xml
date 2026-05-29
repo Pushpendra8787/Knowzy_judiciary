@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 🔥 Gradient -->
+    <gradient
+        android:startColor="#FF6B6B"
+        android:centerColor="#EF4444"
+        android:endColor="#B91C1C"
+        android:angle="135"/>
+
+    <!-- 🔹 Corners (balanced for both cards & badges) -->
+    <corners android:radius="16dp"/>
+
+    <!-- 🔹 Soft border for depth -->
+    <stroke
+        android:width="1dp"
+        android:color="#33FFFFFF"/>
+
+</shape>
