@@ -3,6 +3,8 @@ package com.example.knowzydemo.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.OpenableColumns;
+import android.database.Cursor;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -19,6 +21,7 @@ import com.example.knowzydemo.ai.PromptBuilder;
 import com.example.knowzydemo.ai.RetrofitClient;
 import com.example.knowzydemo.ai.models.GroqRequest;
 import com.example.knowzydemo.ai.models.GroqResponse;
+import com.example.knowzydemo.data.RecentCaseRepository;
 import com.example.knowzydemo.utils.OcrUtils;
 import com.example.knowzydemo.utils.PdfUtils;
 
@@ -40,6 +43,7 @@ public class InputActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView tvStatus;
     private TextView tvPageCount;
+    private String selectedFileName = "Analyzed document.pdf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,10 @@ public class InputActivity extends AppCompatActivity {
         super.onActivityResult(req, res, data);
         if (req == PICK_PDF && res == RESULT_OK && data != null) {
             Uri uri = data.getData();
-            if (uri != null) processPDF(uri);
+            if (uri != null) {
+                selectedFileName = getDisplayName(uri);
+                processPDF(uri);
+            }
             else Toast.makeText(this, "Invalid file", Toast.LENGTH_SHORT).show();
         }
     }
@@ -185,9 +192,18 @@ public class InputActivity extends AppCompatActivity {
                                         .getMessage().getContent();
 
                                 if (result != null && !result.trim().isEmpty()) {
+                                    if (result.contains(PromptBuilder.OUT_OF_CONTEXT_MARKER)) {
+                                        showError("This file is outside judiciary context and was not saved.");
+                                        return;
+                                    }
+
+                                    new RecentCaseRepository(InputActivity.this)
+                                            .saveOrUpdate(selectedFileName, result);
+
                                     Intent i = new Intent(InputActivity.this,
                                             ResultActivity.class);
                                     i.putExtra("DATA", result);
+                                    i.putExtra("FILE_NAME", selectedFileName);
                                     startActivity(i);
                                 } else {
                                     showError("AI returned empty response");
@@ -227,5 +243,35 @@ public class InputActivity extends AppCompatActivity {
     private void showError(String msg) {
         runOnUiThread(() ->
                 Toast.makeText(InputActivity.this, msg, Toast.LENGTH_LONG).show());
+    }
+
+    private String getDisplayName(Uri uri) {
+        String name = null;
+        Cursor cursor = null;
+        try {
+            cursor = getContentResolver().query(
+                    uri,
+                    new String[]{OpenableColumns.DISPLAY_NAME},
+                    null,
+                    null,
+                    null);
+            if (cursor != null && cursor.moveToFirst()) {
+                int index = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                if (index >= 0) {
+                    name = cursor.getString(index);
+                }
+            }
+        } catch (Exception ignored) {
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+        }
+
+        if (name == null || name.trim().isEmpty()) {
+            String lastSegment = uri.getLastPathSegment();
+            name = lastSegment == null ? "Analyzed document.pdf" : lastSegment;
+        }
+        return name;
     }
 }

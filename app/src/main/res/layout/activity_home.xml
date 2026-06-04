@@ -184,17 +184,43 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView style="@style/HomeSectionTitle" android:text="Recent Cases" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <LinearLayout style="@style/HomeWideCard">
-            <TextView style="@style/HomeCardTitle" android:text="Test_Criminal_Case_Report.pdf" />
-            <TextView style="@style/HomeCardDescription" android:text="Analyzed" />
+            <TextView
+                style="@style/HomeSectionTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Recent Cases" />
+
+            <TextView
+                android:id="@+id/btnShowMoreCases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="Show more"
+                android:textColor="#93A4F7"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
         </LinearLayout>
 
-        <LinearLayout style="@style/HomeWideCard">
-            <TextView style="@style/HomeCardTitle" android:text="MedicalCertificate.pdf" />
-            <TextView style="@style/HomeCardDescription" android:text="Analyzed" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tvNoRecentCases"
+            style="@style/HomeActionCard"
+            android:text="No analyzed cases yet."
+            android:textColor="#94A3B8" />
+
+        <LinearLayout
+            android:id="@+id/recentCasesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
         <include layout="@layout/home_actions" />
 

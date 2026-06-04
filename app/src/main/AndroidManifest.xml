@@ -66,6 +66,18 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.TextInputActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.AiAnswerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.RecentCasesActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.InputActivity"
             android:exported="false" />
 
